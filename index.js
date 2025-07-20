@@ -77,7 +77,7 @@ const guardarPedido = async () => {
 };
 
 // Flujo inicial
-const flujoPrincipal = addKeyword(['hola', 'pedido', 'inicio'])
+const flujoPrincipal = addKeyword(['Hola', 'pedido'])
   .addAnswer('👋 Bienvenido. Escribe *pedido* para iniciar o *fin* para salir.')
   .addAction(async (ctx, { flowDynamic, fallBack }) => {
     const mensaje = ctx.body.trim().toLowerCase();
