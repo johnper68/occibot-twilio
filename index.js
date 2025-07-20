@@ -96,7 +96,7 @@ const flujoPrincipal = addKeyword(['Hola', 'pedido'])
   });
 
 // Flujo de datos y productos
-const flujoDatosCliente = addKeyword(['hola', 'buenas']) 
+const flujoDatosCliente = addKeyword(['buenas'])  // ✅ Eliminamos 'hola' para evitar conflicto
   .addAction(async (ctx, { flowDynamic, state, fallBack }) => {
     const input = ctx.body.trim();
 
@@ -185,10 +185,10 @@ const main = async () => {
   const adapterDB = new MockAdapter();
   const adapterFlow = createFlow([flujoPrincipal, flujoDatosCliente]);
   const adapterProvider = createProvider(TwilioProvider,{
-   accountSid: process.env.TWILIO_ACCOUNT_SID,
-   authToken: process.env.TWILIO_AUTH_TOKEN,
-   phoneNumber: process.env.TWILIO_PHONE_NUMBER,
-   });
+    accountSid: process.env.TWILIO_ACCOUNT_SID,
+    authToken: process.env.TWILIO_AUTH_TOKEN,
+    phoneNumber: process.env.TWILIO_PHONE_NUMBER,
+  });
 
   await createBot({
     flow: adapterFlow,
