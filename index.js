@@ -96,7 +96,7 @@ const flujoPrincipal = addKeyword(['Hola', 'pedido'])
   });
 
 // Flujo de datos y productos
-const flujoDatosCliente = addKeyword(/.*/)
+const flujoDatosCliente = addKeyword(['hola', 'buenas']) 
   .addAction(async (ctx, { flowDynamic, state, fallBack }) => {
     const input = ctx.body.trim();
 
