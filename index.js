@@ -86,8 +86,7 @@ const flujoPrincipal = addKeyword(['Hola', 'pedido'])
       estado = 'inicio';
       return await flowDynamic('✅ Pedido cancelado. ¡Hasta pronto!');
     }
-
-    if (mensaje === 'pedido') {
+    if (mensaje === 'pedido' || mensaje === 'hola') {
       estado = 'datos_cliente';
       return await flowDynamic('📋 Escribe tu nombre:');
     }
