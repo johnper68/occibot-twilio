@@ -184,7 +184,7 @@ const flujoDatosCliente = addKeyword(['hola', 'buenas'])
 const main = async () => {
   const adapterDB = new MockAdapter();
   const adapterFlow = createFlow([flujoPrincipal, flujoDatosCliente]);
-  const adapterProvider = await TwilioProvider({
+  const adapterProvider = createProvider(TwilioProvider,{
    accountSid: process.env.TWILIO_ACCOUNT_SID,
    authToken: process.env.TWILIO_AUTH_TOKEN,
    phoneNumber: process.env.TWILIO_PHONE_NUMBER,
