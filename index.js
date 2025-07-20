@@ -1,5 +1,5 @@
 const { createBot, createProvider, createFlow, addKeyword } = require('@bot-whatsapp/bot');
-const TwilioProvider = require('@bot-whatsapp/provider-twilio');
+const { TwilioProvider } = require('@bot-whatsapp/provider-twilio');
 const MockAdapter = require('@bot-whatsapp/database/mock');
 const axios = require('axios');
 require('dotenv').config();
